@@ -44,12 +44,109 @@ function subareva_setup() {
 		*
 		* @link https://developer.wordpress.org/themes/functionality/featured-images-post-thumbnails/
 		*/
-	add_theme_support( 'post-thumbnails' );
+    // Add Post Thumbnail support
+    add_theme_support( 'post-thumbnails' );
+
+
+// Add styles to control column width
+    add_action('admin_head', 'my_custom_table_styles');
+
+    function my_custom_table_styles() {
+        echo '<style>
+   .fixed #featured_thumb {
+       width:10%
+   }
+  </style>';
+    }
+
+
+//// ADD FEATURED IMAGE TO PAGES AND POSTS
+
+// Add the posts and pages columns filter. They both use the same function.
+    add_filter('manage_posts_columns', 'theme_add_post_admin_thumbnail_column', 2);
+    add_filter('manage_pages_columns', 'theme_add_post_admin_thumbnail_column', 2);
+
+// Add the column
+    function theme_add_post_admin_thumbnail_column($columns)
+    {
+
+        // Check if post type is 'Product'
+        global $pagenow, $typenow;
+        if( 'team' === $typenow && 'edit.php' === $pagenow )
+        {
+
+
+            $new = array();
+            foreach ($columns as $key => $title) {
+                if ($key == 'title') // Put the Thumbnail column before the Author column
+                {
+                    $new['featured_thumb'] = __('Фотография');
+                }
+
+                $new[$key] = $title;
+            }
+            return $new;
+
+
+        }
+
+        else {
+            return $columns;
+        }
+
+
+
+    }
+
+
+
+// Manage Post and Page Admin Panel Columns
+    add_action('manage_posts_custom_column', 'theme_show_post_thumbnail_column', 5, 2);
+    add_action('manage_pages_custom_column', 'theme_show_post_thumbnail_column', 5, 2);
+
+// Get featured-thumbnail size post thumbnail and display it
+    function theme_show_post_thumbnail_column($theme_columns, $theme_id)
+    {
+
+        // Check if post type is 'Product'
+        global $pagenow, $typenow;
+        if( 'team' === $typenow && 'edit.php' === $pagenow )
+        {
+
+
+            switch ($theme_columns) {
+                case 'featured_thumb':
+                    if (function_exists('the_post_thumbnail')) {
+
+                        $permalink = get_edit_post_link();
+
+                        $thumb = get_the_post_thumbnail_url(null, 'thumbnail');
+
+                        echo '<a href="' . $permalink . '"><img src="' . $thumb . '" style="width:80px"></a>';
+
+                    } else {
+                        echo 'Your theme doesn\'t support featured image…';
+                    }
+
+                    break;
+            }
+
+        }
+        else {
+
+
+            return $theme_columns;
+        }
+
+
+    }
+
+//// END ADD FEATURED IMAGE TO PAGES AND POSTS
 
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus(
 		array(
-			'menu-1' => esc_html__( 'Primary', 'subareva' ),
+			'main-menu' => esc_html__( 'Главное меню', 'subareva' ),
 		)
 	);
 
@@ -138,12 +235,13 @@ add_action( 'widgets_init', 'subareva_widgets_init' );
  * Enqueue scripts and styles.
  */
 function subareva_scripts() {
-	wp_enqueue_style( 'subareva-style', get_stylesheet_uri(), array(), _S_VERSION );
+	wp_enqueue_style( 'subareva-style', get_template_directory_uri() . '/dist/css/style.css', array(), _S_VERSION );
 	wp_style_add_data( 'subareva-style', 'rtl', 'replace' );
 
-	wp_enqueue_script( 'subareva-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
+	wp_enqueue_script( 'subareva-scripts', get_template_directory_uri() . '/dist/js/common.js', array(), _S_VERSION, true );
 
-	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
+
+    if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
 		wp_enqueue_script( 'comment-reply' );
 	}
 }
@@ -177,25 +275,29 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 }
 
 if( function_exists('acf_add_options_page') ) {
-    
+
     acf_add_options_page(array(
-        'page_title'    => 'Theme General Settings',
-        'menu_title'    => 'Theme Settings',
-        'menu_slug'     => 'theme-general-settings',
-        'capability'    => 'edit_posts',
-        'redirect'      => false
+        'page_title' 	=> 'Общие настройки',
+        'menu_title'	=> 'Настройки темы',
+        'menu_slug' 	=> 'theme-general-settings',
+        'capability'	=> 'edit_posts',
+        'redirect'		=> false
     ));
-    
+
     acf_add_options_sub_page(array(
-        'page_title'    => 'Theme Header Settings',
-        'menu_title'    => 'Header',
-        'parent_slug'   => 'theme-general-settings',
+        'page_title' 	=> 'Настройки шапки',
+        'menu_title'	=> 'Шапка',
+        'parent_slug'	=> 'theme-general-settings',
     ));
-    
+
     acf_add_options_sub_page(array(
-        'page_title'    => 'Theme Footer Settings',
-        'menu_title'    => 'Footer',
-        'parent_slug'   => 'theme-general-settings',
+        'page_title' 	=> 'Настройки футера',
+        'menu_title'	=> 'Футер',
+        'parent_slug'	=> 'theme-general-settings',
     ));
-    
+    acf_add_options_sub_page(array(
+        'page_title' 	=> 'Настройки контактов',
+        'menu_title'	=> 'Контакты',
+        'parent_slug'	=> 'theme-general-settings',
+    ));
 }
