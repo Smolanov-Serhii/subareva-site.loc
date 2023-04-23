@@ -32,6 +32,9 @@ $(document).ready(function () {
             slidesPerView: 4,
             centeredSlides: true,
             spaceBetween: 84,
+            mousewheel: {
+                releaseOnEdges: true,
+            },
         });
     }
     if ($('.start-container').length) {
