@@ -1,0 +1,210 @@
+body.loaded{
+  .start__sfera{
+    //transform: scale(0.6);
+  }
+}
+.start{
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+  &__socials{
+    position: fixed;
+    left: 50px;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: auto;
+    justify-content: center;
+    align-items: center;
+    z-index: 3;
+    svg{
+      transition: all 0.2s ease-in;
+      g{
+        transition: all 0.2s ease-in;
+      }
+      path{
+        transition: all 0.2s ease-in;
+      }
+      circle{
+        transition: all 0.2s ease-in;
+      }
+      &:hover{
+        path{
+          fill: #15223D;
+        }
+        circle{
+          stroke: #15223D;
+        }
+        g{
+          opacity: 1;
+        }
+      }
+    }
+    a{
+      margin: 10px 0;
+    }
+  }
+  &__decoration{
+    &-top{
+      position: absolute;
+      height: 610vw * $px;
+      width: 610vw * $px;
+      top: -450vw * $px;
+      right: 95vw * $px;
+      background: rgba(255, 255, 255, 0.9);
+      opacity: 0.5;
+      box-shadow: 0px 51px 188px rgba(182, 180, 255, 0.19), 0px 27.3944px 93.2004px rgba(182, 180, 255, 0.0857984), 0px 12.0704px 39.685px rgba(182, 180, 255, 0.0393476), 0px 4.1637px 12.5927px rgba(182, 180, 255, 0.0210292), 0px 0.825787px 1.52615px rgba(182, 180, 255, 0.0150356);
+      backdrop-filter: blur(2px);
+      border-radius: 50%;
+      z-index: 2;
+    }
+    &-left{
+      position: absolute;
+      height: 814vw * $px;
+      width: 814vw * $px;
+      top: calc(50vh - (407vw * $px));
+      left: -507vw * $px;
+      background: rgba(255, 255, 255, 0.9);
+      opacity: 0.8;
+      box-shadow: 0px 51px 188px rgba(182, 180, 255, 0.19), 0px 27.3944px 93.2004px rgba(182, 180, 255, 0.0857984), 0px 12.0704px 39.685px rgba(182, 180, 255, 0.0393476), 0px 4.1637px 12.5927px rgba(182, 180, 255, 0.0210292), 0px 0.825787px 1.52615px rgba(182, 180, 255, 0.0150356);
+      backdrop-filter: blur(2px);
+      border-radius: 50%;
+      z-index: 2;
+    }
+    &-bottom{
+      position: absolute;
+      height: 814vw * $px;
+      width: 814vw * $px;
+      bottom: -636vw * $px;
+      right: -45vw * $px;
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0px 51px 188px rgba(182, 180, 255, 0.19), 0px 27.3944px 93.2004px rgba(182, 180, 255, 0.0857984), 0px 12.0704px 39.685px rgba(182, 180, 255, 0.0393476), 0px 4.1637px 12.5927px rgba(182, 180, 255, 0.0210292), 0px 0.825787px 1.52615px rgba(182, 180, 255, 0.0150356);
+      backdrop-filter: blur(2px);
+      border-radius: 50%;
+      z-index: 2;
+    }
+  }
+  &-container{
+    position: relative;
+    .header{
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: auto;
+      z-index: 10;
+      &__nav{
+        .menu-item{
+          margin: 0;
+        }
+      }
+    }
+    .footer{
+      position: fixed;
+      bottom: 75vw * $px;
+      left: 0;
+      width: 100%;
+      height: auto;
+      z-index: 10;
+      color: #A9B3C0;
+      font-size: 0.875rem;
+      text-align: center;
+    }
+  }
+  &__sfera{
+    transition: all 4s ease-in;
+    //transform: scale(4.5);
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+    pointer-events: none;
+    margin-top: 80vw * $px;
+  }
+  &__container{
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &__nav{
+    z-index: 2;
+    position: relative;
+    width: 100%;
+    &:before{
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      content: "";
+      display: block;
+      background: linear-gradient(90deg, #FFFFFF 60%, rgba(255, 255, 255, 0) 92.72%);
+      width: 300vw * $px;
+      z-index: 10;
+      pointer-events: none;
+    }
+    &:after{
+      position: absolute;
+      right: 0;
+      top: 0;
+      height: 100%;
+      content: "";
+      display: block;
+      background: linear-gradient(90deg, #FFFFFF 60%, rgba(255, 255, 255, 0) 92.72%);
+      transform: matrix(-1, 0, 0, 1, 0, 0);
+      width: 300vw * $px;
+      z-index: 10;
+      pointer-events: none;
+    }
+    li{
+      text-align: center;
+    }
+    a{
+      font-weight: 800;
+      text-transform: uppercase;
+      text-decoration: none;
+      color: #15223D;
+      font-size: 2.5rem;
+    }
+  }
+  &__contacts{
+    position: fixed;
+    top: 0;
+    height: 100%;
+    z-index: 5;
+    right: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    svg{
+      transition: all 0.2s ease-in;
+      g{
+        transition: all 0.2s ease-in;
+      }
+      path{
+        transition: all 0.2s ease-in;
+      }
+      circle{
+        transition: all 0.2s ease-in;
+      }
+      &:hover{
+        path{
+          fill: #15223D;
+        }
+        circle{
+          stroke: #15223D;
+        }
+        g{
+          opacity: 1;
+        }
+      }
+    }
+    a{
+      margin: 9px 0;
+    }
+  }
+}

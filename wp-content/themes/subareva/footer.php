@@ -11,10 +11,10 @@
 ?>
 	<footer id="footer" class="footer">
 		<div class="footer__container main-container">
-
+			<p>© <?php echo date('Y')?>. Subareva Clinic</p>
 		</div>
 	</footer>
 <?php wp_footer(); ?>
-
+</div>
 </body>
 </html>

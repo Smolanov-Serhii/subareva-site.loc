@@ -11,7 +11,7 @@
  *
  * @package Subareva
  */
-
+$slug = basename(get_permalink());
 get_header();
 ?>
 

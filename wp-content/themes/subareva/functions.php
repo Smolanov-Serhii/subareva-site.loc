@@ -301,3 +301,11 @@ if( function_exists('acf_add_options_page') ) {
         'parent_slug'	=> 'theme-general-settings',
     ));
 }
+add_filter('nav_menu_css_class' , 'special_nav_class' , 10 , 2);
+
+function special_nav_class($classes, $item){
+    if(is_page( 2 ) ) {
+        $classes[] = 'swiper-slide';
+    }
+    return $classes;
+}

@@ -1,0 +1,37 @@
+.team{
+  margin-top: 3rem;
+  &__container{
+
+  }
+  &__list{
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -30px;
+  }
+  &__item{
+    width: calc(20% - 30px);
+    margin-right: 30px;
+    margin-bottom: 30px;
+  }
+  &__img{
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  &__name{
+    margin-top: 1.3125rem;
+    color: #15223D;
+    font-weight: 500;
+    font-size: 1rem;
+    text-align: center;
+    line-height: 100%;
+    margin-bottom: 0;
+  }
+  &__work{
+    margin-top: 0.5rem;
+    font-weight: 500;
+    font-size: 0.875rem;
+    text-align: center;
+    margin-bottom: 0;
+    color: #A9B3C0;
+  }
+}
