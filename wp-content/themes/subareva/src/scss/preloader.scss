@@ -1,3 +1,10 @@
+body.loaded{
+  .preloader{
+    &-main{
+      opacity: 0;
+    }
+  }
+}
 .preloader {
   position: fixed;
   left: 0;
@@ -6,6 +13,19 @@
   bottom: 0;
   background: #F6F6F6;
   z-index: 1001;
+  &-main{
+    transition-delay: 5s;
+    transition: all 1s ease;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #F6F6F6;
+    z-index: 1001;
+    opacity: 1;
+    pointer-events: none;
+  }
 }
 .preloader__row {
   position: relative;

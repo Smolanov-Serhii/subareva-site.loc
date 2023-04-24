@@ -1,4 +1,58 @@
 $(document).ready(function () {
+
+    function HeaderMove(){
+        if ($("header").length){
+            let $menu = $("header");
+            $(window).scroll(function() {
+                let winScrollTop = $(this).scrollTop();
+                if ( winScrollTop > 100 && $menu.hasClass("default")){
+                    $menu.removeClass("default").addClass("moved");
+                } else if(winScrollTop <= 100 && $menu.hasClass("moved")) {
+                    $menu.removeClass("moved").addClass("default");
+                }
+            });
+        }
+    }
+    function FrescoInit(){
+        // $("div.fresco").on("click", function (event) {
+        //     event.preventDefault();
+        //     Fresco.show($(this).data('fresco'));
+        // });
+    }
+    function SferaInit(){
+        if ($(".about__sfera").length){
+            setTimeout(function() {
+                $(".about__sfera").addClass('loaded-sfera');
+            }, 3000);
+        }
+    }
+
+    SferaInit();
+    FrescoInit();
+    HeaderMove()
+    function ClinicSlider(){
+        if ($(".clinic").length){
+            var ClinicSlider = new Swiper(".clinic .swiper-container", {
+                slidesPerView: 5,
+                loop: true,
+                centeredSlides: true,
+                spaceBetween: 20,
+                noSwiping: true,
+                draggable: false,
+                allowTouchMove: false,
+                mousewheel: {
+                    releaseOnEdges: true,
+                },
+                navigation: {
+                    nextEl: ".clinic__slider-next",
+                    prevEl: ".clinic__slider-prev",
+                },
+            });
+        }
+    }
+
+    ClinicSlider();
+
     barba.init({
         transitions: [{
             name: 'StartContainer',
@@ -7,6 +61,10 @@ $(document).ready(function () {
             },
             enter() {
                 StartContainer();
+                SferaInit();
+                FrescoInit();
+                ClinicSlider();
+                HeaderMove();
             }
         }]
     });

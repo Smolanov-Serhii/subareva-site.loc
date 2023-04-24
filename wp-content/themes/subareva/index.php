@@ -30,11 +30,8 @@ $slug = $wp_query->post->post_title;
 	</script>
 <body <?php body_class(); ?> data-barba="wrapper">
 <div class="site-container start-container" data-barba="container" data-barba-namespace="<?php echo $slug?>">
-	<div class="preloader">
-		<div class="preloader__row">
-			<div class="preloader__item"></div>
-			<div class="preloader__item"></div>
-		</div>
+	<div class="preloader-main">
+
 	</div>
 	<?php wp_body_open(); ?>
 	<header id="header" class="header">

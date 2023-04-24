@@ -15,6 +15,7 @@
 		</div>
 	</footer>
 <?php wp_footer(); ?>
+<script src="<?php echo get_template_directory_uri() . '/js/fresco.min.js'?>"></script>
 </div>
 </body>
 </html>

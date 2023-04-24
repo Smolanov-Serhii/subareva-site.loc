@@ -1,6 +1,7 @@
 body.loaded{
   .start__sfera{
-    //transform: scale(0.6);
+    opacity: 1;
+    transform: scale(1);
   }
 }
 .start{
@@ -95,6 +96,10 @@ body.loaded{
       width: 100%;
       height: auto;
       z-index: 10;
+      margin-top: 10px;
+      &__logo{
+        margin-bottom: 0;
+      }
       &__nav{
         .menu-item{
           margin: 0;
@@ -114,13 +119,15 @@ body.loaded{
     }
   }
   &__sfera{
-    transition: all 4s ease-in;
-    //transform: scale(4.5);
+    transition-delay: 5s;
+    transition: all 5s ease;
+    transform: scale(4.5);
+    opacity: 0;
     position: absolute;
     width: 100%;
     height: 100%;
     z-index: 0;
-    pointer-events: none;
+    //pointer-events: none;
     margin-top: 80vw * $px;
   }
   &__container{

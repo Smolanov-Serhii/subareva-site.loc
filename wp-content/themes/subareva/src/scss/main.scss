@@ -1,10 +1,8 @@
 @import "normalize";
-@import "aos";
+//@import "aos";
 @import "preloader";
-@import "fresco";
 @import "swiper-bundle";
-@import "swiper-gl";
-//@import "selectric";
+@import "fresco";
 @import "default";
 $transition: 0.2s;
 $px: 0.0520833333333333;
@@ -184,5 +182,6 @@ main{
 @import "templates/start";
 @import "templates/about";
 @import "templates/team";
+@import "templates/clinic";
 @import "templates/footer";
 
