@@ -34,12 +34,36 @@
 </script>
 <body <?php body_class(); ?> data-barba="wrapper">
 <div class="site-container" data-barba="container" data-barba-namespace="<?php echo $slug?>">
-
-<div class="preloader">
-	<div class="preloader__row">
-		<div class="preloader__item"></div>
-		<div class="preloader__item"></div>
+	<div class="background">
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
+		<span></span>
 	</div>
+<!--<div class="preloader">-->
+<!--	<div class="preloader__row">-->
+<!--		<div class="preloader__item"></div>-->
+<!--		<div class="preloader__item"></div>-->
+<!--	</div>-->
+<!--</div>-->
+<div class="preloader-page">
+
 </div>
 <?php wp_body_open(); ?>
 	<header id="header" class="header default">

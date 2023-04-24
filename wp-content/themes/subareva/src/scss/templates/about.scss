@@ -1,3 +1,24 @@
+.page-about{
+  position: relative;
+  .start__decoration-left{
+    position: fixed;
+    left: -637vw * $px;
+    width: 814vw * $px;
+    height: 814vw * $px;
+  }
+  .start__decoration-bottom{
+    right: -654vw * $px;
+    width: 814vw * $px;
+    height: 814vw * $px;
+    top: 73vh;
+  }
+  .start__decoration-top{
+    right: -211vw * $px;
+    width: 610vw * $px;
+    height: 610vw * $px;
+    top: -450vw * $px;
+  }
+}
 .about{
   margin-top: 14.5625rem;
   &__container{
@@ -25,7 +46,7 @@
       transform: translateX(-6.875rem);
       opacity: 0.075!important;
       max-width: none;
-      bottom: 0.725rem;
+      bottom: -2.725rem;
       left: 0;
     }
   }
@@ -51,6 +72,7 @@
     max-height: 654px;
     pointer-events: none;
     position: relative;
+    mix-blend-mode: multiply;
     &.loaded-sfera{
       &:after{
         opacity: 0;
