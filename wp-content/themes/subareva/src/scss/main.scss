@@ -36,9 +36,9 @@ body{
   background-color: #FFFFFF;
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  overflow-x: hidden;
-  width: 100vw;
+  height: auto;
+  min-height: 100vh;
+  position: relative;
   @media all and (max-width: 768px){
     height: auto;
   }
@@ -98,6 +98,8 @@ main{
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+  position: relative;
+  overflow: hidden;
 }
 .button{
   background: linear-gradient(180deg, rgba(225, 228, 247, 0.45) 0%, rgba(247, 248, 255, 0.45) 100%);
@@ -184,5 +186,6 @@ main{
 @import "templates/clinic";
 @import "templates/background";
 @import "templates/preloader-page";
+@import "templates/service";
 @import "templates/footer";
 

@@ -36,6 +36,15 @@ $(document).ready(function () {
             });
         }
     }
+
+    function ShowAcardeon(){
+        if ($(".service").length){
+            $( ".service__head" ).on( "click", function() {
+                $(this).closest('.service__item').find('.service__content').fadeToggle(300);
+            } );
+        }
+    }
+    ShowAcardeon();
     function FrescoInit(){
         // $("div.fresco").on("click", function (event) {
         //     event.preventDefault();
@@ -104,6 +113,7 @@ $(document).ready(function () {
                 FrescoInit();
                 ClinicSlider();
                 HeaderMove();
+                ShowAcardeon();
                 await pageAnimOut(data.next.container)
             }
         }]

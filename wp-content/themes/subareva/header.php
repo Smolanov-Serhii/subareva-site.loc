@@ -56,12 +56,12 @@
 		<span></span>
 		<span></span>
 	</div>
-<!--<div class="preloader">-->
-<!--	<div class="preloader__row">-->
-<!--		<div class="preloader__item"></div>-->
-<!--		<div class="preloader__item"></div>-->
-<!--	</div>-->
-<!--</div>-->
+<div class="preloader">
+	<div class="preloader__row">
+		<div class="preloader__item"></div>
+		<div class="preloader__item"></div>
+	</div>
+</div>
 <div class="preloader-page">
 
 </div>
