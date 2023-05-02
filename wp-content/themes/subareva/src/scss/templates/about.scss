@@ -73,7 +73,9 @@
     pointer-events: none;
     position: relative;
     mix-blend-mode: multiply;
+    opacity: 0.000001;
     &.loaded-sfera{
+      opacity: 1;
       &:after{
         opacity: 0;
       }

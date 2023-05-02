@@ -114,6 +114,7 @@ $(document).ready(function () {
                 ClinicSlider();
                 HeaderMove();
                 ShowAcardeon();
+                MapsList();
                 await pageAnimOut(data.next.container)
             }
         }]
@@ -148,6 +149,132 @@ $(document).ready(function () {
     if ($('.start-container').length) {
         StartContainer();
     }
+    function MapsList(){
+        if ($("#map1").length){
+            function initMap1() {
+                var positionx = $('#map1').closest('.contacts__item').data('setx');
+                var positiony = $('#map1').closest('.contacts__item').data('sety');
+                var element = document.getElementById('map1');
+                var options = {
+                    zoom: 14,
+                    mapId: "",
+                    center: {lat:  positionx, lng: positiony},
+                };
+                var myMap = new google.maps.Map(element, options);
+                var markers = [
+                    {
+                        coordinates: {lat:  positionx, lng: positiony},
+                    },
+                ];
+                for(var i = 0; i < markers.length; i++) {
+                    addMarker(markers[i]);
+                }
+                function addMarker(properties) {
+                    var IconImg = $('.contacts__list').data('marker');
+                    var marker = new google.maps.Marker({
+                        position: properties.coordinates,
+                        icon: IconImg,
+                        map: myMap
+                    });
+                    if(properties.image) {
+                        marker.setIcon(properties.image);
+                    }
+                    if(properties.info) {
+                        var InfoWindow = new google.maps.InfoWindow({
+                            content: properties.info
+                        });
+                        marker.addListener('click', function(){
+                            InfoWindow.open(myMap, marker);
+                        });
+                    }
+                }
+            }
+            initMap1();
+        }
+        if ($("#map2").length){
+            function initMap2() {
+                var positionx = $('#map2').closest('.contacts__item').data('setx');
+                var positiony = $('#map2').closest('.contacts__item').data('sety');
+                var element = document.getElementById('map2');
+                var options = {
+                    zoom: 14,
+                    mapId: "",
+                    center: {lat:  positionx, lng: positiony},
+                };
+                var myMap = new google.maps.Map(element, options);
+                var markers = [
+                    {
+                        coordinates: {lat:  positionx, lng: positiony},
+                    },
+                ];
+                for(var i = 0; i < markers.length; i++) {
+                    addMarker(markers[i]);
+                }
+                function addMarker(properties) {
+                    var IconImg = $('.contacts__list').data('marker');
+                    var marker = new google.maps.Marker({
+                        position: properties.coordinates,
+                        icon: IconImg,
+                        map: myMap
+                    });
+                    if(properties.image) {
+                        marker.setIcon(properties.image);
+                    }
+                    if(properties.info) {
+                        var InfoWindow = new google.maps.InfoWindow({
+                            content: properties.info
+                        });
+                        marker.addListener('click', function(){
+                            InfoWindow.open(myMap, marker);
+                        });
+                    }
+                }
+            }
+            initMap2();
+        }
+        if ($("#map3").length){
+            function initMap3() {
+                var positionx = $('#map3').closest('.contacts__item').data('setx');
+                var positiony = $('#map3').closest('.contacts__item').data('sety');
+                var element = document.getElementById('map3');
+                var options = {
+                    zoom: 14,
+                    mapId: "",
+                    center: {lat:  positionx, lng: positiony},
+                };
+                var myMap = new google.maps.Map(element, options);
+                var markers = [
+                    {
+                        coordinates: {lat:  positionx, lng: positiony},
+                    },
+                ];
+                for(var i = 0; i < markers.length; i++) {
+                    addMarker(markers[i]);
+                }
+                function addMarker(properties) {
+                    var IconImg = $('.contacts__list').data('marker');
+                    var marker = new google.maps.Marker({
+                        position: properties.coordinates,
+                        icon: IconImg,
+                        map: myMap
+                    });
+                    if(properties.image) {
+                        marker.setIcon(properties.image);
+                    }
+                    if(properties.info) {
+                        var InfoWindow = new google.maps.InfoWindow({
+                            content: properties.info
+                        });
+                        marker.addListener('click', function(){
+                            InfoWindow.open(myMap, marker);
+                        });
+                    }
+                }
+            }
+            initMap3();
+        }
+    }
+    MapsList();
 
 });
 

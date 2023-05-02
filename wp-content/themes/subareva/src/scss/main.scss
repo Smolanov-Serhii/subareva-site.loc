@@ -179,6 +179,7 @@ main{
   }
 }
 
+@import "templates/pages";
 @import "templates/header";
 @import "templates/start";
 @import "templates/about";
@@ -187,5 +188,7 @@ main{
 @import "templates/background";
 @import "templates/preloader-page";
 @import "templates/service";
+@import "templates/contacts";
+@import "templates/portfolio";
 @import "templates/footer";
 

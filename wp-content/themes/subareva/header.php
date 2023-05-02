@@ -20,6 +20,10 @@
 	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
 	<script src="https://unpkg.com/@barba/core"></script>
 	<script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
+	<script
+		src="https://maps.googleapis.com/maps/api/js?key="
+		defer
+	></script>
 	<?php wp_head(); ?>
 </head>
 <script>
