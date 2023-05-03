@@ -1,6 +1,6 @@
 .page{
   &-about{
-    padding-top: 14.5625rem
+    padding-top: 23rem
   }
   &-service{
     padding-top: 17.4375rem;
@@ -66,6 +66,11 @@
       width: 610vw * $px;
       height: 610vw * $px;
       top: -450vw * $px;
+    }
+  }
+  &-portfolio{
+    .clinic{
+      margin-top: 0;
     }
   }
 }

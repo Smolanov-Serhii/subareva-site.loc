@@ -3,6 +3,8 @@
 @import "preloader";
 @import "swiper-bundle";
 @import "fresco";
+//@import "two-img";
+//@import "img-comp";
 @import "default";
 $transition: 0.2s;
 $px: 0.0520833333333333;
@@ -190,5 +192,6 @@ main{
 @import "templates/service";
 @import "templates/contacts";
 @import "templates/portfolio";
+@import "templates/reviews";
 @import "templates/footer";
 

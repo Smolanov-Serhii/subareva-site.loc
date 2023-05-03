@@ -168,40 +168,42 @@ get_header();
                     </p>
                 </div>
                 <div class="clinic__slider" data-aos="fade-up" data-aos-delay="700">
-                    <div class="swiper-container">
-                        <div class="clinic__wrapper swiper-wrapper">
-                            <div class="swiper-slide clinic__slider-item fresco" data-fresco="<?php echo get_template_directory_uri() . '/img/templates/clinic/slide-4.jpg'?>">
-                                <img class="about__title-img swiper-slide-image" src="<?php echo get_template_directory_uri() . '/img/templates/clinic/slide-1.jpg'?>" alt="Диагностика">
-                                <h3 class="clinic__slider-desc swiper-slide-title">Диагностика</h3>
+                    <div class="block">
+                        <div class="swiper-container">
+                            <div class="clinic__wrapper swiper-wrapper">
+                                <div class="swiper-slide clinic__slider-item fresco" data-fresco="<?php echo get_template_directory_uri() . '/img/templates/clinic/slide-4.jpg'?>">
+                                    <img class="about__title-img swiper-slide-image" src="<?php echo get_template_directory_uri() . '/img/templates/clinic/slide-1.jpg'?>" alt="Диагностика">
+                                    <h3 class="clinic__slider-desc swiper-slide-title">Диагностика</h3>
+                                </div>
+                                <div class="swiper-slide clinic__slider-item fresco" data-fresco="<?php echo get_template_directory_uri() . '/img/templates/clinic/slide-4.jpg'?>">
+                                    <img class="about__title-img swiper-slide-image" src="<?php echo get_template_directory_uri() . '/img/templates/clinic/slide-2.jpg'?>" alt="Диагностика">
+                                    <h3 class="clinic__slider-desc swiper-slide-title">Диагностика</h3>
+                                </div>
+                                <div class="swiper-slide clinic__slider-item fresco" data-fresco="<?php echo get_template_directory_uri() . '/img/templates/clinic/slide-4.jpg'?>">
+                                    <img class="about__title-img swiper-slide-image" src="<?php echo get_template_directory_uri() . '/img/templates/clinic/slide-3.jpg'?>" alt="Диагностика">
+                                    <h3 class="clinic__slider-desc swiper-slide-title">Диагностика</h3>
+                                </div>
+                                <div class="swiper-slide clinic__slider-item fresco" data-fresco="<?php echo get_template_directory_uri() . '/img/templates/clinic/slide-4.jpg'?>">
+                                    <img class="about__title-img swiper-slide-image" src="<?php echo get_template_directory_uri() . '/img/templates/clinic/slide-4.jpg'?>" alt="Диагностика">
+                                    <h3 class="clinic__slider-desc swiper-slide-title">Диагностика</h3>
+                                </div>
+                                <div class="swiper-slide clinic__slider-item fresco" data-fresco="<?php echo get_template_directory_uri() . '/img/templates/clinic/slide-4.jpg'?>">
+                                    <img class="about__title-img swiper-slide-image" src="<?php echo get_template_directory_uri() . '/img/templates/clinic/slide-1.jpg'?>" alt="Диагностика">
+                                    <h3 class="clinic__slider-desc swiper-slide-title">Диагностика</h3>
+                                </div>
+                                <div class="swiper-slide clinic__slider-item fresco" data-fresco="<?php echo get_template_directory_uri() . '/img/templates/clinic/slide-4.jpg'?>">
+                                    <img class="about__title-img swiper-slide-image" src="<?php echo get_template_directory_uri() . '/img/templates/clinic/slide-2.jpg'?>" alt="Диагностика">
+                                    <h3 class="clinic__slider-desc swiper-slide-title">Диагностика</h3>
+                                </div>
+                                <div class="swiper-slide clinic__slider-item fresco" data-fresco="<?php echo get_template_directory_uri() . '/img/templates/clinic/slide-4.jpg'?>">
+                                    <img class="about__title-img swiper-slide-image" src="<?php echo get_template_directory_uri() . '/img/templates/clinic/slide-3.jpg'?>" alt="Диагностика">
+                                    <h3 class="clinic__slider-desc swiper-slide-title">Диагностика</h3>
+                                </div>
+                                <a href="<?php echo get_template_directory_uri() . '/img/templates/clinic/slide-4.jpg'?>" class="swiper-slide clinic__slider-item fresco" data-fresco="<?php echo get_template_directory_uri() . '/img/templates/clinic/slide-4.jpg'?>">
+                                    <img class="about__title-img swiper-slide-image" src="<?php echo get_template_directory_uri() . '/img/templates/clinic/slide-4.jpg'?>" alt="Диагностика">
+                                    <h3 class="clinic__slider-desc swiper-slide-title">Диагностика</h3>
+                                </a>
                             </div>
-                            <div class="swiper-slide clinic__slider-item fresco" data-fresco="<?php echo get_template_directory_uri() . '/img/templates/clinic/slide-4.jpg'?>">
-                                <img class="about__title-img swiper-slide-image" src="<?php echo get_template_directory_uri() . '/img/templates/clinic/slide-2.jpg'?>" alt="Диагностика">
-                                <h3 class="clinic__slider-desc swiper-slide-title">Диагностика</h3>
-                            </div>
-                            <div class="swiper-slide clinic__slider-item fresco" data-fresco="<?php echo get_template_directory_uri() . '/img/templates/clinic/slide-4.jpg'?>">
-                                <img class="about__title-img swiper-slide-image" src="<?php echo get_template_directory_uri() . '/img/templates/clinic/slide-3.jpg'?>" alt="Диагностика">
-                                <h3 class="clinic__slider-desc swiper-slide-title">Диагностика</h3>
-                            </div>
-                            <div class="swiper-slide clinic__slider-item fresco" data-fresco="<?php echo get_template_directory_uri() . '/img/templates/clinic/slide-4.jpg'?>">
-                                <img class="about__title-img swiper-slide-image" src="<?php echo get_template_directory_uri() . '/img/templates/clinic/slide-4.jpg'?>" alt="Диагностика">
-                                <h3 class="clinic__slider-desc swiper-slide-title">Диагностика</h3>
-                            </div>
-                            <div class="swiper-slide clinic__slider-item fresco" data-fresco="<?php echo get_template_directory_uri() . '/img/templates/clinic/slide-4.jpg'?>">
-                                <img class="about__title-img swiper-slide-image" src="<?php echo get_template_directory_uri() . '/img/templates/clinic/slide-1.jpg'?>" alt="Диагностика">
-                                <h3 class="clinic__slider-desc swiper-slide-title">Диагностика</h3>
-                            </div>
-                            <div class="swiper-slide clinic__slider-item fresco" data-fresco="<?php echo get_template_directory_uri() . '/img/templates/clinic/slide-4.jpg'?>">
-                                <img class="about__title-img swiper-slide-image" src="<?php echo get_template_directory_uri() . '/img/templates/clinic/slide-2.jpg'?>" alt="Диагностика">
-                                <h3 class="clinic__slider-desc swiper-slide-title">Диагностика</h3>
-                            </div>
-                            <div class="swiper-slide clinic__slider-item fresco" data-fresco="<?php echo get_template_directory_uri() . '/img/templates/clinic/slide-4.jpg'?>">
-                                <img class="about__title-img swiper-slide-image" src="<?php echo get_template_directory_uri() . '/img/templates/clinic/slide-3.jpg'?>" alt="Диагностика">
-                                <h3 class="clinic__slider-desc swiper-slide-title">Диагностика</h3>
-                            </div>
-                            <a href="<?php echo get_template_directory_uri() . '/img/templates/clinic/slide-4.jpg'?>" class="swiper-slide clinic__slider-item fresco" data-fresco="<?php echo get_template_directory_uri() . '/img/templates/clinic/slide-4.jpg'?>">
-                                <img class="about__title-img swiper-slide-image" src="<?php echo get_template_directory_uri() . '/img/templates/clinic/slide-4.jpg'?>" alt="Диагностика">
-                                <h3 class="clinic__slider-desc swiper-slide-title">Диагностика</h3>
-                            </a>
                         </div>
                         <div class="clinic__slider-nav">
                             <div class="clinic__slider-prev">

@@ -20,7 +20,6 @@
   }
 }
 .about{
-  margin-top: 14.5625rem;
   &__container{
     display: flex;
     flex-wrap: wrap;
@@ -38,6 +37,9 @@
     text-align: left;
     .about__title-before{
       opacity: 1!important;
+    }
+    img{
+      height: 2.6rem;
     }
     &-before{
       position: absolute;

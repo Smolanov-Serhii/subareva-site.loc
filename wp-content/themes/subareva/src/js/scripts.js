@@ -65,16 +65,18 @@ $(document).ready(function () {
     function ClinicSlider(){
         if ($(".clinic").length){
             var ClinicSlider = new Swiper(".clinic .swiper-container", {
-                slidesPerView: 5,
-                loop: true,
+                effect: "coverflow",
+                grabCursor: true,
                 centeredSlides: true,
-                spaceBetween: 20,
-                noSwiping: true,
-                draggable: false,
-                allowTouchMove: false,
-                mousewheel: {
-                    releaseOnEdges: true,
+                slidesPerView: "auto",
+                coverflowEffect: {
+                    rotate: 5,
+                    stretch: 0,
+                    depth: 300,
+                    modifier: 1.5,
+                    slideShadows: true,
                 },
+                loop: true,
                 navigation: {
                     nextEl: ".clinic__slider-next",
                     prevEl: ".clinic__slider-prev",
@@ -115,6 +117,8 @@ $(document).ready(function () {
                 HeaderMove();
                 ShowAcardeon();
                 MapsList();
+                PotrfolioStom();
+                ReviewsContainer();
                 await pageAnimOut(data.next.container)
             }
         }]
@@ -149,6 +153,67 @@ $(document).ready(function () {
     if ($('.start-container').length) {
         StartContainer();
     }
+
+    function ReviewsContainer(){
+        var swiper = new Swiper(".reviews .swiper-container", {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            mousewheel: {
+                releaseOnEdges: true,
+            },
+            navigation: {
+                nextEl: ".reviews .clinic__slider-next",
+                prevEl: ".reviews .clinic__slider-prev",
+            },
+        });
+    }
+    if ($('.reviews').length) {
+        ReviewsContainer();
+    }
+
+    function PotrfolioStom(){
+        var PotrfolioStom = new Swiper("#portfolio__stomatolog-slider", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            coverflowEffect: {
+                rotate: 5,
+                stretch: 0,
+                depth: 300,
+                modifier: 1.5,
+                slideShadows: true,
+            },
+            loop: true,
+            navigation: {
+                nextEl: ".stomatolog-slider .clinic__slider-next",
+                prevEl: ".stomatolog-slider .clinic__slider-prev",
+            },
+        });
+        var PotrfolioStom1 = new Swiper("#portfolio__cosmetics-slider", {
+            effect: "coverflow",
+            grabCursor: true,
+            centeredSlides: true,
+            slidesPerView: "auto",
+            coverflowEffect: {
+                rotate: 5,
+                stretch: 0,
+                depth: 300,
+                modifier: 1.5,
+                slideShadows: true,
+            },
+            loop: true,
+            navigation: {
+                nextEl: ".cosmetics-slider .clinic__slider-next",
+                prevEl: ".cosmetics-slider .clinic__slider-prev",
+            },
+        });
+    }
+
+    if ($('#portfolio__stomatolog-slider').length) {
+        PotrfolioStom();
+    }
+
     function MapsList(){
         if ($("#map1").length){
             function initMap1() {
@@ -275,6 +340,18 @@ $(document).ready(function () {
         }
     }
     MapsList();
+    function TabInit(){
+        if($('.tabs-elements').length){
+            $(".tabs-elements .tabs-nav-item").click(function() {
+                $(".tabs-elements .tabs-nav-item").removeClass("active").eq($(this).index()).addClass("active");
+                $(".tabs-elements .tabs-content-item").hide().eq($(this).index()) .css("display", "block")
+                    .hide()
+                    .fadeIn();
+            }).eq(0).addClass("active");
+            $(".tabs-elements .tabs-content-item").eq(0).addClass("active");
+        }
+    }
+    TabInit();
 
 });
 
