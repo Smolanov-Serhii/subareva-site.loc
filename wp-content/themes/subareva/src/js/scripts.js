@@ -36,7 +36,7 @@ $(document).ready(function () {
             });
         }
     }
-
+    HeaderMove();
     function ShowAcardeon(){
         if ($(".service").length){
             $( ".service__head" ).on( "click", function() {
@@ -55,13 +55,12 @@ $(document).ready(function () {
         if ($(".about__sfera").length){
             setTimeout(function() {
                 $(".about__sfera").addClass('loaded-sfera');
-            }, 3000);
+            }, 1000);
         }
     }
 
     SferaInit();
-    FrescoInit();
-    HeaderMove()
+    // FrescoInit();
     function ClinicSlider(){
         if ($(".clinic").length){
             var ClinicSlider = new Swiper(".clinic .swiper-container", {
@@ -81,12 +80,68 @@ $(document).ready(function () {
                     nextEl: ".clinic__slider-next",
                     prevEl: ".clinic__slider-prev",
                 },
+                breakpoints: {
+                    // when window width is >= 320px
+                    320: {
+                        coverflowEffect: {
+                            rotate: 5,
+                            stretch: 0,
+                            depth: 100,
+                            modifier: 5,
+                            slideShadows: true,
+                        },
+                    },
+                    // when window width is >= 480px
+                    500: {
+                        coverflowEffect: {
+                            rotate: 5,
+                            stretch: 0,
+                            depth: 100,
+                            modifier: 4,
+                            slideShadows: true,
+                        },
+                    },
+                    // when window width is >= 640px
+                    768: {
+                        coverflowEffect: {
+                            rotate: 5,
+                            stretch: 0,
+                            depth: 100,
+                            modifier: 3,
+                            slideShadows: true,
+                        },
+                    },
+                    1200: {
+                        coverflowEffect: {
+                            rotate: 5,
+                            stretch: 0,
+                            depth: 300,
+                            modifier: 1.5,
+                            slideShadows: true,
+                        },
+                    }
+                }
             });
         }
     }
 
     ClinicSlider();
     const  tl = gsap.timeline();
+    function MainStartAnimate(){
+        if ($(".start-container").length){
+            gsap.from('.start__sfera', {opacity: 0, duration: 2, delay: 1, scaleX: 7, scaleY:7});
+            gsap.from('.start__decoration-left', {opacity: 0, duration: 1, delay: 2, scaleX: 3, scaleY:3, x: "200px", y: "100px"});
+            gsap.from('.start__decoration-top', {opacity: 0, duration: 1, delay: 2, scaleX: 3, scaleY:3, x: "-300px", y: "200px"});
+            gsap.from('.start__decoration-bottom', {opacity: 0, duration: 1, delay: 2, scaleX: 3, scaleY:3, x: "-300px", y: "-200px"});
+            gsap.from('.start__socials', {opacity: 0, duration: 0.5, delay: 2.3, x: "-100px"});
+            gsap.from('.start__contacts', {opacity: 0, duration: 0.5, delay: 2.3, x: "100px" });
+            gsap.from('.header__will', {duration: 0.5, delay: 4, y: "100%" });
+            gsap.to('.header__will', {opacity: 0, duration: 0.5, delay: 5});
+            gsap.from('.header__nav', {opacity: 0, duration: 1, delay: 6 });
+            // gsap.to('.start__sfera', {zIndex: 1, duration: 0.3, delay: 5});
+        }
+    }
+    MainStartAnimate();
     function pageAnimIn(container){
         let WidthWind = $( window ).width();
         return tl.to(container.querySelector('.preloader-page'), {
@@ -102,6 +157,12 @@ $(document).ready(function () {
         })
             .call(AosStart, [container])
     }
+    function PlayVideo(){
+        if ($("#myVideo").length){
+            document.getElementById('myVideo').play();
+        }
+    }
+    PlayVideo();
     barba.init({
         transitions: [{
             name: 'base',
@@ -110,6 +171,8 @@ $(document).ready(function () {
                 data.current.container.remove();
             },
             async enter(data) {
+                PlayVideo();
+                MainStartAnimate();
                 StartContainer();
                 SferaInit();
                 FrescoInit();
@@ -141,18 +204,43 @@ $(document).ready(function () {
     };
 
     function StartContainer(){
-        var swiper = new Swiper(".start-container .swiper-container", {
-            slidesPerView: 4,
-            centeredSlides: true,
-            spaceBetween: 84,
-            mousewheel: {
-                releaseOnEdges: true,
-            },
-        });
+        if ($(".start-container .swiper-container").length){
+            var swiper = new Swiper(".start-container .swiper-container", {
+                slidesPerView: 4,
+                centeredSlides: true,
+                spaceBetween: 84,
+                mousewheel: {
+                    releaseOnEdges: true,
+                },
+                breakpoints: {
+                    // when window width is >= 320px
+                    320: {
+                        slidesPerView: 1,
+                        spaceBetween: 20
+                    },
+                    // when window width is >= 480px
+                    480: {
+                        slidesPerView: 1,
+                        spaceBetween: 20
+                    },
+                    500: {
+                        slidesPerView: 2,
+                        spaceBetween: 30
+                    },
+                    // when window width is >= 640px
+                    768: {
+                        slidesPerView: 3,
+                        spaceBetween: 40
+                    },
+                    1200: {
+                        slidesPerView: 4,
+                        spaceBetween: 40
+                    }
+                }
+            });
+        }
     }
-    if ($('.start-container').length) {
-        StartContainer();
-    }
+    StartContainer();
 
     function ReviewsContainer(){
         var swiper = new Swiper(".reviews .swiper-container", {
@@ -172,47 +260,47 @@ $(document).ready(function () {
     }
 
     function PotrfolioStom(){
-        var PotrfolioStom = new Swiper("#portfolio__stomatolog-slider", {
-            effect: "coverflow",
-            grabCursor: true,
-            centeredSlides: true,
-            slidesPerView: "auto",
-            coverflowEffect: {
-                rotate: 5,
-                stretch: 0,
-                depth: 300,
-                modifier: 1.5,
-                slideShadows: true,
-            },
-            loop: true,
-            navigation: {
-                nextEl: ".stomatolog-slider .clinic__slider-next",
-                prevEl: ".stomatolog-slider .clinic__slider-prev",
-            },
-        });
-        var PotrfolioStom1 = new Swiper("#portfolio__cosmetics-slider", {
-            effect: "coverflow",
-            grabCursor: true,
-            centeredSlides: true,
-            slidesPerView: "auto",
-            coverflowEffect: {
-                rotate: 5,
-                stretch: 0,
-                depth: 300,
-                modifier: 1.5,
-                slideShadows: true,
-            },
-            loop: true,
-            navigation: {
-                nextEl: ".cosmetics-slider .clinic__slider-next",
-                prevEl: ".cosmetics-slider .clinic__slider-prev",
-            },
-        });
+        if ($('#portfolio__stomatolog-slider').length) {
+            var PotrfolioStom = new Swiper("#portfolio__stomatolog-slider", {
+                effect: "coverflow",
+                grabCursor: true,
+                centeredSlides: true,
+                slidesPerView: "auto",
+                coverflowEffect: {
+                    rotate: 5,
+                    stretch: 0,
+                    depth: 300,
+                    modifier: 1.5,
+                    slideShadows: true,
+                },
+                loop: true,
+                navigation: {
+                    nextEl: ".stomatolog-slider .clinic__slider-next",
+                    prevEl: ".stomatolog-slider .clinic__slider-prev",
+                },
+            });
+            var PotrfolioStom1 = new Swiper("#portfolio__cosmetics-slider", {
+                effect: "coverflow",
+                grabCursor: true,
+                centeredSlides: true,
+                slidesPerView: "auto",
+                coverflowEffect: {
+                    rotate: 5,
+                    stretch: 0,
+                    depth: 300,
+                    modifier: 1.5,
+                    slideShadows: true,
+                },
+                loop: true,
+                navigation: {
+                    nextEl: ".cosmetics-slider .clinic__slider-next",
+                    prevEl: ".cosmetics-slider .clinic__slider-prev",
+                },
+            });
+        }
     }
 
-    if ($('#portfolio__stomatolog-slider').length) {
-        PotrfolioStom();
-    }
+    PotrfolioStom();
 
     function MapsList(){
         if ($("#map1").length){

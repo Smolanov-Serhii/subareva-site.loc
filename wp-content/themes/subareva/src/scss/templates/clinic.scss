@@ -1,11 +1,24 @@
 .clinic{
   margin-top: 10.625rem;
-  margin-bottom: 100px;
+  //margin-bottom: 100px;
+  @media all and (max-width: 1024px){
+    margin-top: 70px;
+  }
+  @media all and (max-width: 768px){
+    margin-top: 55px;
+  }
+  @media all and (max-width: 500px){
+    margin-top: 40px;
+  }
   &__container{
-
+    @media all and (max-width: 500px){
+      padding: 0;
+    }
   }
   &__slider{
     position: relative;
+    border-radius: 15px;
+    overflow: hidden;
     &-desc{
       color: #A9B3C0;
       font-weight: 500;
@@ -17,10 +30,25 @@
       transform: scale(0.4);
     }
     .swiper-container{
-      padding: 100px 0 100px 0;
+      padding: 100px 0 200px 0;
       overflow: hidden;
       width: 1060px;
       margin: auto;
+      z-index: 2;
+      position: relative;
+      @media all and (max-width: 1300px){
+        width: 100%;
+      }
+      @media all and (max-width: 1024px){
+        padding-top: 50px;
+      }
+      @media all and (max-width: 768px){
+        padding-top: 35px;
+      }
+      @media all and (max-width: 500px){
+        padding-top: 20px;
+        padding-bottom: 120px;
+      }
       .swiper-wrapper{
         display: flex;
         align-items: center;
@@ -29,6 +57,10 @@
         background-position: center;
         background-size: cover;
         width: 350px;
+        -webkit-box-reflect: below 1px linear-gradient(transparent, transparent , #0002 , #0004);
+        @media all and (max-width: 500px){
+          width: 60vw;
+        }
         .clinic__slider-desc{
           opacity: 0;
           transition: all 0.5s ease;
@@ -49,7 +81,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      z-index: 10;
+      z-index: 1;
       > div{
         cursor: pointer;
         &.swiper-button-disabled{

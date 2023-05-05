@@ -25,10 +25,12 @@ get_header();
         <div class="portfolio__container small-container">
             <div class="clinic__title section-title">
                 <h1 class="section-title__main" data-aos="fade-up" data-aos-delay="400">
-                    Портфолио
+                    <?php the_title(); ?>
+
                 </h1>
                 <p class="section-title__back" data-aos="fade-up" data-aos-delay="100">
-                    Портфолио
+                    <?php the_title(); ?>
+
                 </p>
             </div>
             <div class="portfolio__tabs tabs-elements">

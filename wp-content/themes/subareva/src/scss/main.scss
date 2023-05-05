@@ -25,7 +25,7 @@ html{
     font-size: 90%;
   }
   @media all and (max-width: 1024px){
-    font-size: 80%;
+
   }
   @media all and (max-width: 768px){
 
@@ -55,9 +55,9 @@ main{
   flex: 1;
 }
 .padding-right{
-  padding-right: 136px;
+  padding-right: 100px;
   @media all and (max-width: 1400px){
-    padding-right: 75px;
+    //padding-right: 75px;
   }
   @media all and (max-width: 1024px){
     padding-right: 50px;
@@ -70,9 +70,9 @@ main{
   }
 }
 .padding-left{
-  padding-left: 136px;
+  padding-left: 100px;
   @media all and (max-width: 1400px){
-    padding-left: 75px;
+    //padding-left: 75px;
   }
   @media all and (max-width: 1024px){
     padding-left: 50px;
@@ -92,9 +92,11 @@ main{
   @extend .padding-right;
 }
 .small-container{
-  max-width: 1275px;
+  max-width: 1475px;
   margin: auto;
   width: 100%;
+  @extend .padding-left;
+  @extend .padding-right;
 }
 .site-container{
   display: flex;
@@ -102,6 +104,9 @@ main{
   min-height: 100vh;
   position: relative;
   overflow: hidden;
+}
+video{
+  pointer-events: none;
 }
 .button{
   background: linear-gradient(180deg, rgba(225, 228, 247, 0.45) 0%, rgba(247, 248, 255, 0.45) 100%);
@@ -112,6 +117,15 @@ main{
   display: inline-block;
   position: relative;
   overflow: hidden;
+  text-decoration: none;
+  @media all and (max-width: 500px){
+    min-width: 248px;
+  }
+  @media all and (max-width: 320px){
+    width: 100%;
+    margin-right: 0!important;
+    margin-left: 0!important;
+  }
   &:before{
     position: absolute;
     top: 0.625rem;
@@ -149,6 +163,7 @@ main{
     color: #15223D;
     font-weight: 600;
     font-size: 1rem;
+    text-transform: uppercase;
   }
 }
 .section-title{
@@ -156,6 +171,7 @@ main{
   font-weight: 600;
   line-height: 98.3%;
   position: relative;
+
   &__main{
     position: relative;
     z-index: 1;
@@ -164,6 +180,21 @@ main{
     line-height: 98.3%;
     text-align: center;
     font-size: 3.75rem;
+    @media all and (max-width: 1400px){
+      font-size: 48px;
+    }
+    @media all and (max-width: 1200px){
+      font-size: 44px;
+    }
+    @media all and (max-width: 1024px){
+      font-size: 40px;
+    }
+    @media all and (max-width: 768px){
+      font-size: 36px;
+    }
+    @media all and (max-width: 500px){
+      font-size: 32px;
+    }
   }
   &__back{
     color: #EEEEF5;
@@ -178,6 +209,22 @@ main{
     line-height: 98.3%;
     text-align: center;
     margin-bottom: 0;
+    @media all and (max-width: 1400px){
+      font-size: 90px;
+    }
+    @media all and (max-width: 1200px){
+      font-size: 80px;
+    }
+    @media all and (max-width: 1024px){
+      font-size: 70px;
+    }
+    @media all and (max-width: 768px){
+      font-size: 52px;
+    }
+    @media all and (max-width: 500px){
+      //font-size: 40px;
+      display: none;
+    }
   }
 }
 
