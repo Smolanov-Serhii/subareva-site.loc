@@ -29,7 +29,7 @@ $(document).ready(function () {
         if ($(".header__mob").length){
             $( ".header__burger" ).on( "click", function() {
                 $(this).toggleClass('active');
-                $('.start__decoration-top').toggleClass('burger-active');
+                $('.start__decoration-top').toggleClass('burger-active').css({transition: "all 1s", 'transition-delay': "0.5s"});
                 setTimeout(function() {
                     $('.header__mob').fadeToggle(300);
                 }, 700);
@@ -163,7 +163,7 @@ $(document).ready(function () {
         if ($(".start-container").length){
             gsap.from('.start__sfera', {opacity: 0, duration: 2, delay: 1, scaleX: 7, scaleY:7});
             gsap.from('.start__decoration-left', {opacity: 0, duration: 1, delay: 2, scaleX: 3, scaleY:3, x: "200px", y: "100px"});
-            gsap.from('.start__decoration-top', {opacity: 0, duration: 1, delay: 2, scaleX: 3, scaleY:3, x: "-300px", y: "200px"});
+            gsap.from('.start__decoration-top', {opacity: 0, delay: 2, scaleX: 3, scaleY:3, x: "-300px", y: "300px"});
             gsap.from('.start__decoration-bottom', {opacity: 0, duration: 1, delay: 2, scaleX: 3, scaleY:3, x: "-300px", y: "-200px"});
             gsap.from('.start__socials', {opacity: 0, duration: 0.5, delay: 2.3, x: "-100px"});
             gsap.from('.start__contacts', {opacity: 0, duration: 0.5, delay: 2.3, x: "100px" });

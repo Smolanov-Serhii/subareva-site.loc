@@ -17,6 +17,17 @@
     width: 610vw * $px;
     height: 610vw * $px;
     top: -450vw * $px;
+    @media all and (max-width: 500px){
+      width: 382px;
+      height: 382px;
+      right: -279px;
+      top: -166px;
+    }
+    &.moved{
+      width: 0;
+      height: 0;
+      top: -600vw * $px!important;
+    }
   }
 }
 .about{

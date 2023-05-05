@@ -94,7 +94,7 @@ h6{
 table{
   width: 100%;
   border-collapse:separate;
-  border-spacing:0 16px;
+  //border-spacing:0 16px;
   margin-bottom: 38px;
   th{
     font-weight: 400;
@@ -109,12 +109,27 @@ table{
   th, td{
     font-weight: 400;
     font-size: 16px;
-    line-height: 19px;
-    color: #616BA0;
-    padding: 26px;
+    line-height: 98.3%;
+    color: #15223D;
+    padding: 8px 0;
+    //color: #616BA0;
+    //padding: 26px;
     text-align: left;
-    @media all and (max-width: 768px){
-      padding: 12px 28px;
+    //@media all and (max-width: 768px){
+    //  padding: 12px 28px;
+    //}
+    &:last-child{
+      //border-radius: 0 10px 10px 0;
+      text-align: right;
+    }
+    @media all and (max-width: 1024px){
+      font-size: 16px;
+    }
+    @media all and (max-width: 500px){
+      font-size: 14px;
+      font-weight: 400;
+      border: 1px solid rgba(0,0,0,0.3);
+      padding: 8px 10px;
     }
   }
   thead{
@@ -124,35 +139,36 @@ table{
   }
   tbody{
     tr{
-      background: rgba(255, 255, 255, 0.5);
+      //background: rgba(255, 255, 255, 0.5);
       border-radius: 10px;
-      &:nth-child(even){
-        td{
-          background: rgba(230, 232, 241, 0.5);
-        }
-      }
-      td{
-        &:first-child{
-          border-radius: 10px 0 0 10px;
-        }
+      //&:nth-child(even){
+      //  td{
+      //    background: rgba(230, 232, 241, 0.5);
+      //  }
+      //}
+      //td{
+      //  &:first-child{
+      //    border-radius: 10px 0 0 10px;
+      //  }
         &:last-child{
-          border-radius: 0 10px 10px 0;
+          //border-radius: 0 10px 10px 0;
+          text-align: right;
         }
-        border-top: 1px solid #E6E8F1;
-        border-bottom: 1px solid #E6E8F1;
-        &:first-child{
-          border-left: 1px solid #E6E8F1;
-        }
-        &:last-child{
-          border-right: 1px solid #E6E8F1;
-        }
-        img{
-          margin-right: 14px;
-        }
-      }
-      &:nth-child(even){
-
-      }
+      //  border-top: 1px solid #E6E8F1;
+      //  border-bottom: 1px solid #E6E8F1;
+      //  &:first-child{
+      //    border-left: 1px solid #E6E8F1;
+      //  }
+      //  &:last-child{
+      //    border-right: 1px solid #E6E8F1;
+      //  }
+      //  img{
+      //    margin-right: 14px;
+      //  }
+      //}
+      //&:nth-child(even){
+      //
+      //}
     }
   }
 }

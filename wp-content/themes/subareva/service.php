@@ -40,26 +40,30 @@ get_header();
                         </svg>
                     </div>
                     <div class="service__content">
+                        <div class="service__item-img">
+                            <img src="<?php echo get_template_directory_uri() . '/img/templates/service/img.png'?>" alt="Аппаратная косметология">
+                        </div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At consectetur cupiditate
                             distinctio ipsam natus omnis repellat sapiente! Dicta distinctio fuga hic magnam molestiae
                             velit. Aliquam assumenda iusto odio! Consequuntur, unde!
                         </p>
-                        <p>Assumenda autem consectetur, cupiditate dignissimos ea harum illo illum ipsam nihil nisi
-                            perspiciatis possimus, quas, quisquam suscipit ullam vitae voluptatem. Consectetur cum
-                            doloribus inventore molestiae nemo nulla numquam quidem voluptatem!
-                        </p>
-                        <p>Architecto corporis debitis deleniti doloribus laboriosam libero maiores nulla numquam
-                            quos, sint, tempore temporibus ut! Corporis distinctio doloribus eligendi facere itaque
-                            magni nihil omnis, perspiciatis saepe similique tempora, temporibus voluptate?
-                        </p>
-                        <p>A ab debitis distinctio doloremque dolorum ea earum eius ipsa ipsum maxime modi nulla odio,
-                            placeat reiciendis similique tenetur ut voluptatem. Delectus eos id labore maiores
-                            molestiae, reiciendis velit voluptatum!
-                        </p>
-                        <p>Animi beatae delectus dolores hic neque non quod, saepe sapiente ullam? Ab, odit, velit?
-                            Aperiam aut excepturi exercitationem facilis nam nulla quasi quis saepe sed sint sit unde,
-                            veniam voluptas?
-                        </p>
+                        <table>
+                            <tr><td>Название процедуры</td><td>от  1500 грн</td></tr>
+                            <tr><td>Название процедуры</td><td>от  500 грн</td></tr>
+                            <tr><td>Название процедуры</td><td>от  700 грн</td></tr>
+                            <tr><td>Название процедуры</td><td>от  700 грн</td></tr>
+                            <tr><td>Название процедуры</td><td>от  700 грн</td></tr>
+                            <tr><td>Название процедуры</td><td>от  700 грн</td></tr>
+                            <tr><td>Название процедуры</td><td> 1500 грн</td></tr>
+                        </table>
+                        <div class="service__item-contacts">
+                            <a href="mailto:<?php echo the_field("elektronnaya_pochta", 'options'); ?>" rel="nofollow">
+                                Написать
+                            </a>
+                            <a href="tel:<?php echo the_field("nomer_telefona", 'options'); ?>" rel="nofollow">
+                                Позвонить
+                            </a>
+                        </div>
                     </div>
                 </div>
                 <div class="service__item">
@@ -70,6 +74,9 @@ get_header();
                         </svg>
                     </div>
                     <div class="service__content">
+                        <div class="service__item-img">
+                            <img src="<?php echo get_template_directory_uri() . '/img/templates/service/img.png'?>" alt="Аппаратная косметология">
+                        </div>
                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. At consectetur cupiditate
                             distinctio ipsam natus omnis repellat sapiente! Dicta distinctio fuga hic magnam molestiae
                             velit. Aliquam assumenda iusto odio! Consequuntur, unde!
