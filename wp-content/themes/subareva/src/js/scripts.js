@@ -1,4 +1,42 @@
 $(document).ready(function () {
+
+    barba.init({
+        prefetchIgnore: true,
+        transitions: [{
+            name: 'base',
+            async leave(data) {
+                await pageAnimIn(data.current.container)
+                data.current.container.remove();
+            },
+            async enter(data) {
+                SferaInit();
+                PlayVideo();
+                MainStartAnimate();
+                StartContainer();
+                ClinicSlider();
+                HeaderMove();
+                ShowAcardeon();
+                MapsList();
+                PotrfolioStom();
+                ReviewsContainer();
+                MobMenuInit();
+                await pageAnimOut(data.next.container)
+            }
+        }]
+    });
+
+    function MobMenuInit(){
+        if ($(".header__mob").length){
+            $( ".header__burger" ).on( "click", function() {
+                $(this).toggleClass('active');
+                $('.start__decoration-top').toggleClass('burger-active');
+                setTimeout(function() {
+                    $('.header__mob').fadeToggle(300);
+                }, 700);
+            } );
+        }
+    }
+    MobMenuInit();
     function AosStart(){
         AOS.init({
             // Global settings:
@@ -21,7 +59,6 @@ $(document).ready(function () {
 
         });
     }
-
     AosStart()
     function HeaderMove(){
         if ($("header").length){
@@ -30,8 +67,11 @@ $(document).ready(function () {
                 let winScrollTop = $(this).scrollTop();
                 if ( winScrollTop > 100 && $menu.hasClass("default")){
                     $menu.removeClass("default").addClass("moved");
+                    $('.start__decoration-top').addClass("moved");
                 } else if(winScrollTop <= 100 && $menu.hasClass("moved")) {
                     $menu.removeClass("moved").addClass("default");
+                } else if(winScrollTop <= 80 && $('.start__decoration-top').hasClass("moved")) {
+                    $('.start__decoration-top').removeClass("moved");
                 }
             });
         }
@@ -45,12 +85,6 @@ $(document).ready(function () {
         }
     }
     ShowAcardeon();
-    function FrescoInit(){
-        // $("div.fresco").on("click", function (event) {
-        //     event.preventDefault();
-        //     Fresco.show($(this).data('fresco'));
-        // });
-    }
     function SferaInit(){
         if ($(".about__sfera").length){
             setTimeout(function() {
@@ -58,7 +92,6 @@ $(document).ready(function () {
             }, 1000);
         }
     }
-
     SferaInit();
     // FrescoInit();
     function ClinicSlider(){
@@ -69,10 +102,10 @@ $(document).ready(function () {
                 centeredSlides: true,
                 slidesPerView: "auto",
                 coverflowEffect: {
-                    rotate: 5,
+                    rotate: 30,
                     stretch: 0,
                     depth: 300,
-                    modifier: 1.5,
+                    modifier: 0.5,
                     slideShadows: true,
                 },
                 loop: true,
@@ -124,9 +157,8 @@ $(document).ready(function () {
             });
         }
     }
-
     ClinicSlider();
-    const  tl = gsap.timeline();
+
     function MainStartAnimate(){
         if ($(".start-container").length){
             gsap.from('.start__sfera', {opacity: 0, duration: 2, delay: 1, scaleX: 7, scaleY:7});
@@ -143,6 +175,7 @@ $(document).ready(function () {
     }
     MainStartAnimate();
     function pageAnimIn(container){
+        const  tl = gsap.timeline();
         let WidthWind = $( window ).width();
         return tl.to(container.querySelector('.preloader-page'), {
            width: WidthWind,
@@ -150,6 +183,7 @@ $(document).ready(function () {
         })
     }
     function pageAnimOut(container){
+        const  tl = gsap.timeline();
         let WidthWind = $( window ).width();
         return tl.from(container.querySelector('.preloader-page'), {
             width: WidthWind,
@@ -163,31 +197,6 @@ $(document).ready(function () {
         }
     }
     PlayVideo();
-    barba.init({
-        transitions: [{
-            name: 'base',
-            async leave(data) {
-                await pageAnimIn(data.current.container)
-                data.current.container.remove();
-            },
-            async enter(data) {
-                PlayVideo();
-                MainStartAnimate();
-                StartContainer();
-                SferaInit();
-                FrescoInit();
-                ClinicSlider();
-                HeaderMove();
-                ShowAcardeon();
-                MapsList();
-                PotrfolioStom();
-                ReviewsContainer();
-                await pageAnimOut(data.next.container)
-            }
-        }]
-    });
-
-
 
     if ($(".popup").length){
         document.addEventListener( 'wpcf7mailsent', function( event ) {

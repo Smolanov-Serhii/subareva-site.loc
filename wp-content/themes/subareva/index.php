@@ -15,7 +15,7 @@ $slug = $wp_query->post->post_title;
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 		<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-		<script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
+
 		<?php wp_head(); ?>
 	</head>
 	<script>
@@ -29,8 +29,9 @@ $slug = $wp_query->post->post_title;
 
 	</script>
 <body <?php body_class(); ?> data-barba="wrapper">
-<div class="site-container start-container" data-barba="container" data-barba-namespace="<?php echo $slug?>">
-	<div class="preloader-main">
+<div class="site-container start-container" data-barba="container" data-barba-namespace="home">
+	<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+	<div class="preloader-page">
 
 	</div>
 	<?php wp_body_open(); ?>

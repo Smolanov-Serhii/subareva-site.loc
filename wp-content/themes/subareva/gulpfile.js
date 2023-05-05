@@ -37,7 +37,7 @@ const scriptFiles = [
    // './src/js/img-comp.js',
    // './src/js/feedback.js',
    // './src/js/jquery.selectric.js',
-   './src/js/swiper-bundle.js',
+   // './src/js/swiper-bundle.js',
    // './src/js/jquery.onepage-scroll.js',
    // './src/client/js/jquery.mCustomScrollbar.js',
    // './src/js/fresco.min.js',
@@ -55,7 +55,7 @@ gulp.task('sass', () => {
    //Шаблон для поиска файлов CSS
    //Всей файлы по шаблону './src/css/**/*.css'
    return gulp.src(styleFiles)
-      .pipe(sourcemaps.init())
+      // .pipe(sourcemaps.init())
       //Указать stylus() , sass() или less()
       .pipe(sass())
       //Объединение файлов в один
