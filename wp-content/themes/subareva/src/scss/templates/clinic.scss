@@ -29,10 +29,17 @@
       text-align: center;
       transform: scale(0.4);
     }
+
+    .block{
+      width: 100%;
+      padding: 0 100px;
+      @media all and (max-width: 768px){
+        padding: 0;
+      }
+    }
     .swiper-container{
       padding: 100px 0 200px 0;
       overflow: hidden;
-      width: 1060px;
       margin: auto;
       z-index: 2;
       position: relative;
@@ -43,12 +50,38 @@
         padding-top: 50px;
       }
       @media all and (max-width: 768px){
-        padding-top: 35px;
+        margin-bottom: -100px;
+        padding: 35px 0 134px 0;
       }
       @media all and (max-width: 500px){
         padding-top: 20px;
         padding-bottom: 120px;
       }
+      //&:before{
+      //  position: absolute;
+      //  left: -4px;
+      //  top: 0;
+      //  height: 100%;
+      //  content: "";
+      //  display: block;
+      //  background: linear-gradient(90deg,#fff 60%,rgba(255,255,255,0) 92.72%);
+      //  width: 15.625vw;
+      //  z-index: 10;
+      //  pointer-events: none;
+      //}
+      //&:after{
+      //  position: absolute;
+      //  right: -4px;
+      //  top: 0;
+      //  height: 100%;
+      //  content: "";
+      //  display: block;
+      //  background: linear-gradient(90deg,#fff 60%,rgba(255,255,255,0) 92.72%);
+      //  transform: matrix(-1,0,0,1,0,0);
+      //  width: 15.625vw;
+      //  z-index: 10;
+      //  pointer-events: none;
+      //}
       .swiper-wrapper{
         display: flex;
         align-items: center;
@@ -57,7 +90,7 @@
         display: block;
         background-position: center;
         background-size: cover;
-        width: 350px;
+        width: 371px;
         -webkit-box-reflect: below 1px linear-gradient(transparent, transparent , #0002 , #0004);
         @media all and (max-width: 500px){
           width: 60vw;
@@ -83,6 +116,14 @@
       justify-content: space-between;
       align-items: center;
       z-index: 1;
+      @media all and (max-width: 768px){
+        position: relative;
+        justify-content: center;
+        z-index: 5;
+        > div{
+          margin: 0 10px;
+        }
+      }
       > div{
         cursor: pointer;
         &.swiper-button-disabled{
@@ -92,7 +133,9 @@
     }
   }
   &__container{
-
+    @media all and (max-width: 768px){
+      padding: 0;
+    }
   }
   &__wrapper{
 

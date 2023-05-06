@@ -145,12 +145,16 @@ video{
     &:before{
       opacity: 1;
     }
-    span{
+    span, p{
       color: #FFFFFF;
       background: linear-gradient(95.58deg, rgba(243,245,255,0) 25.17%, rgba(255,255,255,0) 94.41%);
+      text-transform: uppercase;
+      input{
+        color: white;
+      }
     }
   }
-  span{
+  span, p{
     transition: all 0.3s ease;
     position: relative;
     padding: 1.0625rem;
@@ -164,6 +168,10 @@ video{
     font-weight: 600;
     font-size: 1rem;
     text-transform: uppercase;
+    input{
+      transition: all 0.3s ease;
+      text-transform: uppercase;
+    }
   }
 }
 .section-title{
@@ -240,5 +248,6 @@ video{
 @import "templates/contacts";
 @import "templates/portfolio";
 @import "templates/reviews";
+@import "templates/popup";
 @import "templates/footer";
 

@@ -79,6 +79,16 @@
   &-portfolio{
     padding-top: 17.4375rem;
     position: relative;
+    @media all and (max-width: 1024px){
+      padding-top: 160px;
+    }
+    @media all and (max-width: 768px){
+      padding-top: 120px;
+    }
+    @media all and (max-width: 500px){
+      padding-top: 108px;
+      padding-bottom: 70px;
+    }
     .start__decoration-left{
       position: fixed;
       left: -637vw * $px;

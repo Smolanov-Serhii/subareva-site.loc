@@ -34,7 +34,7 @@ get_header();
                 </p>
             </div>
             <div class="portfolio__tabs tabs-elements">
-                <div class="portfolio__tabs-item tabs-nav-item">
+                <div class="portfolio__tabs-item tabs-nav-item active">
                     <div class="button ">
                         <span>Стоматология</span>
                     </div>
@@ -46,7 +46,7 @@ get_header();
                 </div>
             </div>
             <div class="portfolio__content tabs-elements">
-                <div class="portfolio__content-item tabs-content-item stomatolog-slider">
+                <div class="portfolio__content-item tabs-content-item stomatolog-slider active">
                     <div class="portfolio__stomatolog-block">
                         <div class="portfolio__stomatolog-slider swiper-container" id="portfolio__stomatolog-slider">
                             <div class="portfolio__wrapper swiper-wrapper">
@@ -84,13 +84,13 @@ get_header();
                                 </div>
                             </div>
                         </div>
-                        <div class="clinic__slider-nav">
-                            <div class="clinic__slider-prev">
-                                <img class="about__title-img" src="<?php echo get_template_directory_uri() . '/img/templates/clinic/prev.png'?>" alt="PREV">
-                            </div>
-                            <div class="clinic__slider-next">
-                                <img class="about__title-img" src="<?php echo get_template_directory_uri() . '/img/templates/clinic/next.png'?>" alt="NEXT">
-                            </div>
+                    </div>
+                    <div class="clinic__slider-nav">
+                        <div class="clinic__slider-prev">
+                            <img class="about__title-img" src="<?php echo get_template_directory_uri() . '/img/templates/clinic/prev.png'?>" alt="PREV">
+                        </div>
+                        <div class="clinic__slider-next">
+                            <img class="about__title-img" src="<?php echo get_template_directory_uri() . '/img/templates/clinic/next.png'?>" alt="NEXT">
                         </div>
                     </div>
                 </div>

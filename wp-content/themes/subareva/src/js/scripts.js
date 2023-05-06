@@ -20,6 +20,7 @@ $(document).ready(function () {
                 PotrfolioStom();
                 ReviewsContainer();
                 MobMenuInit();
+                PopupInit();
                 await pageAnimOut(data.next.container)
             }
         }]
@@ -80,7 +81,7 @@ $(document).ready(function () {
     function ShowAcardeon(){
         if ($(".service").length){
             $( ".service__head" ).on( "click", function() {
-                $(this).closest('.service__item').find('.service__content').fadeToggle(300);
+                $(this).closest('.service__item').find('.service__content').toggleClass('open');
             } );
         }
     }
@@ -198,19 +199,27 @@ $(document).ready(function () {
     }
     PlayVideo();
 
-    if ($(".popup").length){
-        document.addEventListener( 'wpcf7mailsent', function( event ) {
-            $('.fade').removeClass('showed');
-            $('.fade__container').fadeOut(300);
-            $('.popup').fadeIn(300);
-            $('#success-send').fadeIn(300);
-            $('.wpcf7-response-output').empty();
-            setTimeout(function (){
-                $('#success-send').fadeOut(300);
+    function PopupInit(){
+        if ($(".popup").length){
+            document.addEventListener( 'wpcf7mailsent', function( event ) {
                 $('.popup').fadeOut(300);
-            }, 2000);
-        }, false );
-    };
+                $('#success-send').fadeIn(300);
+                $('.wpcf7-response-output').empty();
+                setTimeout(function (){
+                    $('#success-send').fadeOut(300);
+                }, 2000);
+            }, false );
+            $(".js-form").click(function () {
+                // $('body').removeClass('locked');
+                $('.popup').fadeIn(300);
+            });
+            $(".popup__close").click(function () {
+                // $('body').removeClass('locked');
+                $(this).closest('.popup').fadeOut(300);
+            });
+        };
+    }
+    PopupInit();
 
     function StartContainer(){
         if ($(".start-container .swiper-container").length){
@@ -287,6 +296,47 @@ $(document).ready(function () {
                     nextEl: ".stomatolog-slider .clinic__slider-next",
                     prevEl: ".stomatolog-slider .clinic__slider-prev",
                 },
+                breakpoints: {
+                    // when window width is >= 320px
+                    320: {
+                        coverflowEffect: {
+                            rotate: 5,
+                            stretch: 0,
+                            depth: 100,
+                            modifier: 5,
+                            slideShadows: true,
+                        },
+                    },
+                    // when window width is >= 480px
+                    500: {
+                        coverflowEffect: {
+                            rotate: 5,
+                            stretch: 0,
+                            depth: 100,
+                            modifier: 4,
+                            slideShadows: true,
+                        },
+                    },
+                    // when window width is >= 640px
+                    768: {
+                        coverflowEffect: {
+                            rotate: 5,
+                            stretch: 0,
+                            depth: 100,
+                            modifier: 3,
+                            slideShadows: true,
+                        },
+                    },
+                    1200: {
+                        coverflowEffect: {
+                            rotate: 5,
+                            stretch: 0,
+                            depth: 300,
+                            modifier: 1.5,
+                            slideShadows: true,
+                        },
+                    }
+                }
             });
             var PotrfolioStom1 = new Swiper("#portfolio__cosmetics-slider", {
                 effect: "coverflow",
@@ -305,6 +355,47 @@ $(document).ready(function () {
                     nextEl: ".cosmetics-slider .clinic__slider-next",
                     prevEl: ".cosmetics-slider .clinic__slider-prev",
                 },
+                breakpoints: {
+                    // when window width is >= 320px
+                    320: {
+                        coverflowEffect: {
+                            rotate: 5,
+                            stretch: 0,
+                            depth: 100,
+                            modifier: 5,
+                            slideShadows: true,
+                        },
+                    },
+                    // when window width is >= 480px
+                    500: {
+                        coverflowEffect: {
+                            rotate: 5,
+                            stretch: 0,
+                            depth: 100,
+                            modifier: 4,
+                            slideShadows: true,
+                        },
+                    },
+                    // when window width is >= 640px
+                    768: {
+                        coverflowEffect: {
+                            rotate: 5,
+                            stretch: 0,
+                            depth: 100,
+                            modifier: 3,
+                            slideShadows: true,
+                        },
+                    },
+                    1200: {
+                        coverflowEffect: {
+                            rotate: 5,
+                            stretch: 0,
+                            depth: 300,
+                            modifier: 1.5,
+                            slideShadows: true,
+                        },
+                    }
+                }
             });
         }
     }

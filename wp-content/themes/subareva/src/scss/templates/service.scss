@@ -61,6 +61,8 @@
     cursor: pointer;
     position: relative;
     transition: all 0.5s;
+    z-index: 2;
+    background: #f3f5ff;
     @media all and (max-width: 1024px){
       padding: 20px 70px 20px 20px;
       font-size: 16px;
@@ -79,10 +81,17 @@
     }
   }
   &__content{
-    display: none;
-    padding: 30px 136px 30px 25%;
     background: #F7F7F7;
     position: relative;
+    transition: all 0.5s;
+    padding: 0 136px 0 25%;
+    max-height: 0;
+    &.open{
+      padding: 30px 136px 30px 25%;
+      height: auto;
+      max-height: 100vh;
+      transition: all 0.5s;
+    }
     @media all and (max-width: 1024px){
       padding: 20px 20px 20px 20px;
     }
@@ -90,6 +99,9 @@
       font-size: 16px;
       @media all and (max-width: 500px){
         font-size: 14px;
+      }
+      &:last-child{
+        margin-bottom: 0;
       }
     }
     *{

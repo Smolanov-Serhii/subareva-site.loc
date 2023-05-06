@@ -1,14 +1,22 @@
 .portfolio{
   &__container{
-
+    @media all and (max-width: 768px){
+      padding-right: 0;
+      padding-left: 0;
+    }
   }
   &__stomatolog-block{
     position: relative;
+    padding: 0 100px;
+    @media all and (max-width: 768px){
+      padding: 0;
+    }
   }
   &__stomatolog-slider{
     padding: 100px 0 200px 0;
     overflow: hidden;
-    width: 1060px;
+    max-width: 1060px;
+    width: 100%;
     margin: auto;
     z-index: 2;
     position: relative;
@@ -16,10 +24,13 @@
       width: 100%;
     }
     @media all and (max-width: 1024px){
-      padding-top: 50px;
+      //padding-top: 50px;
+      padding-top: 80px;
     }
     @media all and (max-width: 768px){
-      padding-top: 35px;
+      //padding-top: 35px;
+      margin-bottom: -100px;
+      padding: 60px 0 134px 0;
     }
     @media all and (max-width: 500px){
       padding-top: 20px;
@@ -32,7 +43,7 @@
     .swiper-slide {
       background-position: center;
       background-size: cover;
-      width: 350px;
+      width: 365px;
       -webkit-box-reflect: below 1px linear-gradient(transparent, transparent , #0002 , #0004);
       @media all and (max-width: 500px){
         width: 60vw;
@@ -53,8 +64,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    flex-wrap: wrap;
+    @media all and (max-width: 500px){
+      margin-bottom: 40px;
+    }
     &-item{
-      margin: 0 0.875rem;
+      margin: 0 0.875rem 10px 0.875rem;
       &.active{
         .button{
           background: linear-gradient(180deg, rgba(199, 205, 248, 0.45) 0%, rgba(234, 236, 255, 0.45) 100%);
@@ -71,8 +86,15 @@
   }
   &__content{
     margin-top: 4rem;
+    @media all and (max-width: 1024px){
+      margin-top: 0;
+    }
+    &-item{
+      position: relative;
+    }
     .tabs-content-item{
 
     }
   }
+
 }
