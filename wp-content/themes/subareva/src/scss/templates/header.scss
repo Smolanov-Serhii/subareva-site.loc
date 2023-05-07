@@ -162,6 +162,7 @@
       position: absolute;
       left: 56px;
       top: 44px;
+      opacity: 0;
       img{
         width: 100px;
         height: auto;
@@ -184,7 +185,7 @@
     }
     &-hide{
       position: fixed;
-      top: 20px;
+      top: 25px;
       left: 56px;
       opacity: 0;
       transition: all 0.5s ease;
