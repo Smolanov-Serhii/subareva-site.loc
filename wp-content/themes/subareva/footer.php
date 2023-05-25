@@ -14,7 +14,7 @@
 			<p>© <?php echo date('Y')?>. Subareva Clinic</p>
 		</div>
 	</footer>
-<div class="popup padding-right padding-left" style="display: none">
+<div class="popup padding-right padding-left" style="display: none" data-thanks="<?php echo esc_url( get_permalink(205) ); ?>">
 	<div class="popup__container">
 		<div class="popup__close">
 			<svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">

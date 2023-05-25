@@ -115,7 +115,7 @@
 				);
 				?>
 			</nav>
-			<div class="header__nav-phones">
+			<div class="header__nav-phones" style="justify-content: flex-end; align-items: flex-end;">
 				<?php
 				if( have_rows('telefony_v_menyu', 'options') ):
 					while( have_rows('telefony_v_menyu','options') ) : the_row();
@@ -128,11 +128,13 @@
 				endif;
 				?>
 			</div>
-			<div class="header__language">
-				<?php
-				qtranxf_generateLanguageSelectCode('short');
-				?>
-			</div>
+			<?php if( current_user_can('editor') || current_user_can('administrator') ) {  ?>
+				<div class="header__language">
+					<?php
+					qtranxf_generateLanguageSelectCode('short');
+					?>
+				</div>
+			<?php } ?>
 			<div class="header__burger">
 				<img src="<?php echo get_template_directory_uri() . '/img/templates/header/burger.png'?>" alt="Burger button">
 				<!--			<div class="header__burger-lines">-->
@@ -201,11 +203,13 @@
 					endif;
 					?>
 				</div>
-				<div class="header__mob-language">
-					<?php
-					qtranxf_generateLanguageSelectCode('short');
-					?>
-				</div>
+				<?php if( current_user_can('editor') || current_user_can('administrator') ) {  ?>
+					<div class="header__mob-language">
+						<?php
+						qtranxf_generateLanguageSelectCode('short');
+						?>
+					</div>
+				<?php } ?>
 			</div>
 		</div>
 	</header>

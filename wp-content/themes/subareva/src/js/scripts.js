@@ -15,7 +15,6 @@ $(document).ready(function () {
                 SferaInit();
                 PlayVideo();
                 MainStartAnimate();
-                StartContainer();
                 ClinicSlider();
                 HeaderMove();
                 ShowAcardeon();
@@ -215,11 +214,12 @@ $(document).ready(function () {
         if ($(".popup").length){
             document.addEventListener( 'wpcf7mailsent', function( event ) {
                 $('.popup').fadeOut(300);
-                $('#success-send').fadeIn(300);
-                $('.wpcf7-response-output').empty();
-                setTimeout(function (){
-                    $('#success-send').fadeOut(300);
-                }, 2000);
+                // $('#success-send').fadeIn(300);
+                // $('.wpcf7-response-output').empty();
+                barba.go($('.popup').data('thanks'));
+                // setTimeout(function (){
+                //     $('#success-send').fadeOut(300);
+                // }, 2000);
             }, false );
             $(".js-form").click(function () {
                 // $('body').removeClass('locked');
@@ -232,45 +232,6 @@ $(document).ready(function () {
         };
     }
     PopupInit();
-
-    function StartContainer(){
-        if ($(".start-container .swiper-container").length){
-            var swiper = new Swiper(".start-container .swiper-container", {
-                slidesPerView: 4,
-                centeredSlides: true,
-                spaceBetween: 84,
-                mousewheel: {
-                    releaseOnEdges: true,
-                },
-                breakpoints: {
-                    // when window width is >= 320px
-                    320: {
-                        slidesPerView: 1,
-                        spaceBetween: 20
-                    },
-                    // when window width is >= 480px
-                    480: {
-                        slidesPerView: 1,
-                        spaceBetween: 20,
-                    },
-                    500: {
-                        slidesPerView: 2,
-                        spaceBetween: 30
-                    },
-                    // when window width is >= 640px
-                    768: {
-                        slidesPerView: 3,
-                        spaceBetween: 40
-                    },
-                    1200: {
-                        slidesPerView: 4,
-                        spaceBetween: 40
-                    }
-                }
-            });
-        }
-    }
-    StartContainer();
 
     function ReviewsContainer(){
         var swiper = new Swiper(".reviews .swiper-container", {
