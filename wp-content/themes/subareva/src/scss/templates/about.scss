@@ -31,6 +31,19 @@
   }
 }
 .about{
+  position: relative;
+  padding-top: 23rem;
+  padding-bottom: 15.81rem;
+  @media all and (max-width: 1024px){
+    padding-top: 160px;
+  }
+  @media all and (max-width: 768px){
+    padding-top: 120px;
+  }
+  @media all and (max-width: 500px){
+    padding-top: 180px;
+    padding-bottom: 70px;
+  }
   &__container{
     display: flex;
     justify-content: space-between;
@@ -123,15 +136,12 @@
     }
   }
   &__sfera{
-    transform: translateY(-100vw * $px) scale(1.35);
-    width: 689vw * $px;
-    height: 654vw * $px;
-    max-width: 689px;
-    max-height: 654px;
+    //transform: translateY(-100vw * $px) scale(1.35);
+    //width: 689vw * $px;
+    //height: 654vw * $px;
+    //max-width: 689px;
+    //max-height: 654px;
     pointer-events: none;
-    position: relative;
-    mix-blend-mode: multiply;
-    opacity: 0.000001;
     text-align: right;
     @media all and (max-width: 1200px){
       //transform: translateY(0) scale(1.35);
@@ -156,6 +166,13 @@
         width: 100%;
       }
     }
+    img{
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      max-width: none;
+    }
     &.loaded-sfera{
       opacity: 1;
       &:after{
@@ -172,7 +189,7 @@
       left: -2px;
       width: calc(100% + 4px);
       height: calc(100% + 4px);
-      background-color: white;
+      //background-color: white;
       opacity: 1;
     }
   }

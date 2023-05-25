@@ -1,5 +1,7 @@
 $(document).ready(function () {
 
+
+
     barba.init({
         prefetchIgnore: true,
         transitions: [{
@@ -9,6 +11,7 @@ $(document).ready(function () {
                 data.current.container.remove();
             },
             async enter(data) {
+                // Twentytwenty();
                 SferaInit();
                 PlayVideo();
                 MainStartAnimate();
@@ -21,6 +24,7 @@ $(document).ready(function () {
                 ReviewsContainer();
                 MobMenuInit();
                 PopupInit();
+                TabInit();
                 await pageAnimOut(data.next.container)
             }
         }]
@@ -81,6 +85,7 @@ $(document).ready(function () {
     function ShowAcardeon(){
         if ($(".service").length){
             $( ".service__head" ).on( "click", function() {
+                $('.service__content').removeClass('open');
                 $(this).closest('.service__item').find('.service__content').toggleClass('open');
             } );
         }
@@ -101,7 +106,7 @@ $(document).ready(function () {
                 effect: "coverflow",
                 grabCursor: true,
                 centeredSlides: true,
-                slidesPerView: "auto",
+                slidesPerView: 3,
                 coverflowEffect: {
                     rotate: 30,
                     stretch: 0,
@@ -162,16 +167,23 @@ $(document).ready(function () {
 
     function MainStartAnimate(){
         if ($(".start-container").length){
-            gsap.from('.start__sfera', {opacity: 0, duration: 2, delay: 1, scaleX: 7, scaleY:7});
-            gsap.from('.start__decoration-left', {opacity: 0, duration: 1, delay: 2, scaleX: 3, scaleY:3, x: "200px", y: "100px"});
-            gsap.from('.start__decoration-top', {opacity: 0, delay: 2, scaleX: 3, scaleY:3, x: "-300px", y: "300px"});
-            gsap.from('.start__decoration-bottom', {opacity: 0, duration: 1, delay: 2, scaleX: 3, scaleY:3, x: "-300px", y: "-200px"});
-            gsap.from('.start__socials', {opacity: 0, duration: 0.5, delay: 2.3, x: "-100px"});
-            gsap.from('.start__contacts', {opacity: 0, duration: 0.5, delay: 2.3, x: "100px" });
-            gsap.from('.header__will', {duration: 0.5, delay: 4, y: "100%" });
+            gsap.from('.start__sfera', {opacity: 0, duration: 1, delay: 1, scaleX: 7, scaleY:7});
+            gsap.from('.start__decoration-left', {opacity: 0, duration: 1, delay: 1, scaleX: 3, scaleY:3, x: "200px", y: "100px"});
+            gsap.from('.start__decoration-top', {opacity: 0, delay: 1, scaleX: 3, scaleY:3, x: "-300px", y: "300px"});
+            gsap.from('.start__decoration-bottom', {opacity: 0, duration: 1, delay: 1, scaleX: 3, scaleY:3, x: "-300px", y: "-200px"});
+            gsap.from('.start__socials', {opacity: 0, duration: 0.5, delay: 1.3, x: "-100px"});
+            gsap.from('.start__contacts', {opacity: 0, duration: 0.5, delay: 1.3, x: "100px" });
+            gsap.from('.header__will', {duration: 0.5, delay: 2, y: "100%" });
             gsap.to('.header__will', {opacity: 0, duration: 0.5, delay: 5});
-            gsap.from('.header__nav', {opacity: 0, duration: 1, delay: 6 });
-            // gsap.to('.start__sfera', {zIndex: 1, duration: 0.3, delay: 5});
+            // gsap.from('.header__nav', {opacity: 0, duration: 1, delay: 6 });
+            gsap.to('.start__sfera', {zIndex: 1, duration: 0.3, delay: 3});
+            if ($(".start").length){
+                let HomeLink = $('header').data('lnk');
+                setTimeout(function() {
+                    barba.go(HomeLink);
+                    // window.location.href = HomeLink;
+                }, 3000);
+            }
         }
     }
     MainStartAnimate();
@@ -262,6 +274,9 @@ $(document).ready(function () {
 
     function ReviewsContainer(){
         var swiper = new Swiper(".reviews .swiper-container", {
+            speed: 500,
+            effect: 'fade',
+            autoHeight: true, //enable auto height
             slidesPerView: 1,
             spaceBetween: 20,
             mousewheel: {
@@ -283,77 +298,18 @@ $(document).ready(function () {
                 effect: "coverflow",
                 grabCursor: true,
                 centeredSlides: true,
-                slidesPerView: "auto",
+                slidesPerView: 3,
                 coverflowEffect: {
-                    rotate: 5,
+                    rotate: 30,
                     stretch: 0,
                     depth: 300,
-                    modifier: 1.5,
+                    modifier: 0.5,
                     slideShadows: true,
                 },
                 loop: true,
                 navigation: {
-                    nextEl: ".stomatolog-slider .clinic__slider-next",
-                    prevEl: ".stomatolog-slider .clinic__slider-prev",
-                },
-                breakpoints: {
-                    // when window width is >= 320px
-                    320: {
-                        coverflowEffect: {
-                            rotate: 5,
-                            stretch: 0,
-                            depth: 100,
-                            modifier: 5,
-                            slideShadows: true,
-                        },
-                    },
-                    // when window width is >= 480px
-                    500: {
-                        coverflowEffect: {
-                            rotate: 5,
-                            stretch: 0,
-                            depth: 100,
-                            modifier: 4,
-                            slideShadows: true,
-                        },
-                    },
-                    // when window width is >= 640px
-                    768: {
-                        coverflowEffect: {
-                            rotate: 5,
-                            stretch: 0,
-                            depth: 100,
-                            modifier: 3,
-                            slideShadows: true,
-                        },
-                    },
-                    1200: {
-                        coverflowEffect: {
-                            rotate: 5,
-                            stretch: 0,
-                            depth: 300,
-                            modifier: 1.5,
-                            slideShadows: true,
-                        },
-                    }
-                }
-            });
-            var PotrfolioStom1 = new Swiper("#portfolio__cosmetics-slider", {
-                effect: "coverflow",
-                grabCursor: true,
-                centeredSlides: true,
-                slidesPerView: "auto",
-                coverflowEffect: {
-                    rotate: 5,
-                    stretch: 0,
-                    depth: 300,
-                    modifier: 1.5,
-                    slideShadows: true,
-                },
-                loop: true,
-                navigation: {
-                    nextEl: ".cosmetics-slider .clinic__slider-next",
-                    prevEl: ".cosmetics-slider .clinic__slider-prev",
+                    nextEl: ".clinic__slider-next",
+                    prevEl: ".clinic__slider-prev",
                 },
                 breakpoints: {
                     // when window width is >= 320px
@@ -401,6 +357,80 @@ $(document).ready(function () {
     }
 
     PotrfolioStom();
+
+    function PotrfolioCosm(){
+        if ($('#portfolio__cosmetics-slider').length) {
+            if($('.cosmetics-slider').css('display') == 'none')
+            {
+
+            } else {
+                if ($("#portfolio__cosmetics-slider").hasClass("active")) {
+
+                } else {
+                    var PotrfolioCosm = new Swiper("#portfolio__cosmetics-slider", {
+                        effect: "coverflow",
+                        grabCursor: true,
+                        centeredSlides: true,
+                        slidesPerView: 3,
+                        coverflowEffect: {
+                            rotate: 30,
+                            stretch: 0,
+                            depth: 300,
+                            modifier: 0.5,
+                            slideShadows: true,
+                        },
+                        loop: true,
+                        navigation: {
+                            nextEl: ".clinic__slider-next",
+                            prevEl: ".clinic__slider-prev",
+                        },
+                        breakpoints: {
+                            // when window width is >= 320px
+                            320: {
+                                coverflowEffect: {
+                                    rotate: 5,
+                                    stretch: 0,
+                                    depth: 100,
+                                    modifier: 5,
+                                    slideShadows: true,
+                                },
+                            },
+                            // when window width is >= 480px
+                            500: {
+                                coverflowEffect: {
+                                    rotate: 5,
+                                    stretch: 0,
+                                    depth: 100,
+                                    modifier: 4,
+                                    slideShadows: true,
+                                },
+                            },
+                            // when window width is >= 640px
+                            768: {
+                                coverflowEffect: {
+                                    rotate: 5,
+                                    stretch: 0,
+                                    depth: 100,
+                                    modifier: 3,
+                                    slideShadows: true,
+                                },
+                            },
+                            1200: {
+                                coverflowEffect: {
+                                    rotate: 5,
+                                    stretch: 0,
+                                    depth: 300,
+                                    modifier: 1.5,
+                                    slideShadows: true,
+                                },
+                            }
+                        }
+                    });
+                }
+            }
+        }
+    }
+    PotrfolioCosm();
 
     function MapsList(){
         if ($("#map1").length){
@@ -535,6 +565,7 @@ $(document).ready(function () {
                 $(".tabs-elements .tabs-content-item").hide().eq($(this).index()) .css("display", "block")
                     .hide()
                     .fadeIn();
+                    PotrfolioCosm();
             }).eq(0).addClass("active");
             $(".tabs-elements .tabs-content-item").eq(0).addClass("active");
         }

@@ -1,16 +1,6 @@
 .page{
   &-about{
-    padding-top: 23rem;
-    @media all and (max-width: 1024px){
-      padding-top: 160px;
-    }
-    @media all and (max-width: 768px){
-      padding-top: 120px;
-    }
-    @media all and (max-width: 500px){
-      padding-top: 180px;
-      padding-bottom: 70px;
-    }
+
   }
   &-service{
     padding-top: 17.4375rem;

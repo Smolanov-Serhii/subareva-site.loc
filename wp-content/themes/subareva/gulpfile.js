@@ -33,6 +33,8 @@ const scriptFiles = [
    './src/js/jquery-3.5.1.js',
    // './src/js/sfera.js',
    './src/js/aos.js',
+   // './src/js/jquery.event.move.js',
+   // './src/js/jquery.twentytwenty.js',
    // './src/js/two-img.js',
    // './src/js/img-comp.js',
    // './src/js/feedback.js',

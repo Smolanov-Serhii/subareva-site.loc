@@ -31,6 +31,7 @@
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.5/gsap.min.js" integrity="sha512-cOH8ndwGgPo+K7pTvMrqYbmI8u8k6Sho3js0gOqVWTmQMlLIi6TbqGWRTpf1ga8ci9H3iPsvDLr4X7xwhC/+DQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
+
 <!--<script src="--><?php //echo get_template_directory_uri() . '/js/fresco.min.js'?><!--"></script>-->
 <?php wp_footer(); ?>
 </div>
