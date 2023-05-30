@@ -9,7 +9,17 @@
  * @package Subareva
  */
 
+if ( is_front_page() && is_home() ) {
+
+	$param = 'data-aos="fade-right" data-aos-delay="1200"';
+	$param2 = ' data-aos="fade-left" data-aos-delay="1500""';
+}
+else {
+	$param = '';
+	$param2 = '';
+}
 ?>
+
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
@@ -21,6 +31,23 @@
 	<script src="https://maps.googleapis.com/maps/api/js?key=" defer ></script>
 <!--	<script src="--><?php //echo get_template_directory_uri() . '/src/js/jquery.event.move.js'?><!--"></script>-->
 <!--	<script src="--><?php //echo get_template_directory_uri() . '/src/js/jquery.twentytwenty.js'?><!--"></script>-->
+	<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-25DMJ8C3N0"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-25DMJ8C3N0');
+</script>
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-M2CSQ4M');</script>
+<!-- End Google Tag Manager -->
+
 	<?php wp_head(); ?>
 </head>
 <script>
@@ -40,6 +67,11 @@
 </script>
 
 <body <?php body_class(); ?> data-barba="wrapper">
+	<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M2CSQ4M"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
 <div class="site-container" data-barba="container" data-barba-namespace="<?php echo $slug?>">
 	<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
 	<div class="background">
